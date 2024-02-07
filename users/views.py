@@ -1,4 +1,5 @@
-from rest_framework import viewsets, status, generics
+from rest_framework import viewsets, status
+from rest_framework.authentication import SessionAuthentication, BasicAuthentication
 from rest_framework.permissions import AllowAny
 from rest_framework.response import Response
 from users.tasks import verifications
@@ -10,6 +11,7 @@ class UserViewSet(viewsets.ModelViewSet):
     serializer_class = UserSerializer
     queryset = User.objects.all()
     permission_classes = [AllowAny]
+    authentication_classes = [SessionAuthentication]
 
     def create(self, request):
         serializer = UserSerializer(data=request.data)
