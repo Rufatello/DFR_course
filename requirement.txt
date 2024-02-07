@@ -1,0 +1,9 @@
+Pillow
+djangorestframework
+psycopg2-binary
+django
+djangorestframework-simplejwt
+redis
+redis-server
+celery
+django-celery-beat
