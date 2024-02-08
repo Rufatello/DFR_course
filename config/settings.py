@@ -9,7 +9,7 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
-
+from datetime import timedelta
 from pathlib import Path
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -43,6 +43,7 @@ INSTALLED_APPS = [
     'django_celery_beat',
 
     'users',
+    'habit',
 ]
 
 MIDDLEWARE = [
@@ -152,3 +153,6 @@ EMAIL_HOST_USER = 'geidarovrufat@yandex.ru'
 EMAIL_HOST_PASSWORD = 'etmkgnowaujqzmtr'
 EMAIL_USE_SSL = True
 
+SIMPLE_JWT = {
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=60)
+}
