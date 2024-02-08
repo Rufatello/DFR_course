@@ -8,8 +8,8 @@ class Validator:
         self.fields = fields
 
     def __call__(self, value):
-        if value.get(self.fields[0]):
-            value['fee'] = None
+        value['fee'] = None
+        value['habit'] = None
         return value
 
 
