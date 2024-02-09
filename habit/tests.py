@@ -14,7 +14,7 @@ class HabitTestCase(TestCase):
 
     def test_habit_create(self):
         """Создание привычки"""
-        self.client.login(username='1@mail.ru', password='12345')
+
         data = {
             'action': '3123'
         }
@@ -80,8 +80,23 @@ class HabitTestCase(TestCase):
                           )
 
 
-
-
-
-
+class ReflexTestCase(TestCase):
+    def test_reflex_create(self):
+        data = {
+            'locale': '123',
+            'data': '01-01-2021',
+            'is_publicity': False,
+            'periodicity': 'week',
+            'nice_reflex': False,
+            'action': '321',
+            'time_to_complete': 12,
+        }
+        responce = self.client.post(
+            '/habit/reflex/create/',
+            data=data
+        )
+        print(responce)
+        self.assertEqual(
+            responce.status_code, status.HTTP_201_CREATED
+        )
 
