@@ -10,10 +10,10 @@ class HabitViewSet(viewsets.ModelViewSet):
     serializer_class = HabitSerializer
     queryset = Habit.objects.all()
 
-    def perform_create(self, serializer):
-        new_lesson = serializer.save()
-        new_lesson.user = self.request.user
-        new_lesson.save()
+    # def perform_create(self, serializer):
+    #     new_lesson = serializer.save()
+    #     new_lesson.user = self.request.user
+    #     new_lesson.save()
 
 
 class ReflexListUserdAPIView(generics.ListAPIView):
