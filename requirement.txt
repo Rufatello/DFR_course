@@ -7,3 +7,5 @@ redis
 redis-server
 celery
 django-celery-beat
+cors-headers-4.3.1
+drf-yasg

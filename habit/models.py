@@ -40,3 +40,6 @@ class Reflex(models.Model):
         verbose_name_plural = 'Рефлексы'
 
 
+
+
+

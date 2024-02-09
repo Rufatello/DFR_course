@@ -1,3 +1,8 @@
 from django.contrib import admin
 
-# Register your models here.
+from habit.models import Reflex
+
+
+@admin.register(Reflex)
+class ReflexAdmin(admin.ModelAdmin):
+    list_display = ('id',)
