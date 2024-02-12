@@ -104,10 +104,10 @@ class ReflexTestCase(TestCase):
             'data': '2021-01-01',
             'is_publicity': False,
             'periodicity': 'week',
-            'nice_reflex': True,
+            'nice_reflex': False,
             'action': '321',
             'time_to_complete': 12,
-            'fee': 123
+            'habit': self.habit.pk
         }
         response = self.client.post('/habit/reflex/create/', data=data)
         print(response.json())

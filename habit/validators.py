@@ -13,10 +13,10 @@ class ValidatorTime:
             raise ValidationError('Время не может быть больше 120 секунд')
 
 
-# class ValidatorFee:
-#     def validator_fee(data):
-#         if data['fee'] and data['habit']:
-#             raise ValidationError('Нельзя связать привычку и указать вознагрождение')
+class ValidatorFee:
+    def validator_fee(self):
+        if self['fee'] and self['habit']:
+            raise ValidationError('Нельзя связать привычку и указать вознагрождение')
 
 
 
