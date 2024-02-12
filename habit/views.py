@@ -32,26 +32,32 @@ class ReflexAPIView(generics.ListAPIView):
 class ReflexCreateApiView(generics.CreateAPIView):
     serializer_class = ReflexSerializer
 
-    # def perform_create(self, serializer):
-    #     new_lesson = serializer.save()
-    #     new_lesson.user = self.request.user
-    #     new_lesson.save()
+    def perform_create(self, serializer):
+        new_habit = serializer.save()
+        # new_lesson = serializer.save()
+        # new_lesson.user = self.request.user
+        # new_lesson.save()
+        if new_habit.nice_reflex:
+            new_habit.habit = None
+            new_habit.fee = None
+
+
 
 
 class ReflexUpdateAPIView(generics.UpdateAPIView):
     serializer_class = ReflexSerializer
     queryset = Reflex.objects.all()
 
-    def get_queryset(self):
-        return Reflex.objects.filter(user=self.request.user)
+    # def get_queryset(self):
+    #     return Reflex.objects.filter(user=self.request.user)
 
 
 class ReflexDestroyAPIView(generics.DestroyAPIView):
     serializer_class = ReflexSerializer
     queryset = Reflex.objects.all()
 
-    def get_queryset(self):
-        return Reflex.objects.filter(user=self.request.user)
+    # def get_queryset(self):
+    #     return Reflex.objects.filter(user=self.request.user)
 
 
 
